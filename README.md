@@ -17,6 +17,37 @@ The original build script provides an easy way to build ffmpeg on OSX and Linux 
 
 *Youtube: How-To build and install FFmpeg on OSX*
 
+Built with (minus other flags): 
+```
+--enable-videotoolbox 
+--extra-libs='-lpthread -lm' 
+--enable-static 
+--disable-debug 
+--disable-shared 
+--disable-ffplay 
+--enable-gpl 
+--enable-version3 
+--enable-nonfree 
+--enable-pthreads 
+--enable-libvpx 
+--enable-libmp3lame 
+--enable-libtheora 
+--enable-libvorbis 
+--enable-libx264 
+--enable-libx265 
+--enable-runtime-cpudetect 
+--enable-libfdk-aac 
+--enable-avfilter 
+--enable-libopencore_amrwb 
+--enable-libopencore_amrnb 
+--enable-filters 
+--enable-libvidstab 
+--enable-libass 
+--enable-libfreetype 
+--enable-fontconfig 
+--enable-videotoolbox
+```
+
 ## Example fisheye removal for GoPro/Mobius
 -------
 * For Mobius lens "C": 
