@@ -17,6 +17,27 @@ The original build script provides an easy way to build ffmpeg on OSX and Linux 
 
 *Youtube: How-To build and install FFmpeg on OSX*
 
+## Example fisheye removal for GoPro/Mobius
+-------
+* For Mobius lens "C": 
+
+```ffmpeg -i <inputfile> -vf frei0r=defish0r:0.8:y:0.6:0 -vcodec libx264 -pix_fmt yuv420p -acodec copy <outputfile.mp4>```
+
+![Example of cleaned up image](https://github.com/rtgoodwin/ffmpeg-build-script-plus-frei0r-freetype/blob/master/compare.png)
+
+and another
+
+![Example of cleaned up image](https://github.com/rtgoodwin/ffmpeg-build-script-plus-frei0r-freetype/blob/master/compare2.png)
+
+(Blur at edges is in the original video; keep those lenses clean, people! :) )
+
+* For GoPro (or other cameras with less barrel distortion):
+
+```ffmpeg -i <inputfile> -vf frei0r=defish0r:0.75:y:0.6:0 -vcodec libx264 -pix_fmt yuv420p -acodec copy <outputfile.mp4>```
+
+
+# Below Here is from Markus's original Readme
+
 ## Disclaimer
 Use this script at your own risk. I maintain this script in my spare time. 
 Please do not file bug reports for systems other than Debian 9 and macOS 10.13
@@ -111,23 +132,6 @@ Tested on
 * Mac OSX 10.14 64Bit XCode 10.1
 * Debian 9.4
 
-Example fisheye removal for GoPro/Mobius
--------
-* For Mobius lens "C": 
-
-```ffmpeg -i <inputfile> -vf frei0r=defish0r:0.8:y:0.6:0 -vcodec libx264 -pix_fmt yuv420p -acodec copy <outputfile.mp4>```
-
-![Example of cleaned up image](https://github.com/rtgoodwin/ffmpeg-build-script-plus-frei0r-freetype/blob/master/compare.png)
-
-and another
-
-![Example of cleaned up image](https://github.com/rtgoodwin/ffmpeg-build-script-plus-frei0r-freetype/blob/master/compare2.png)
-
-(Blur at edges is in the original video; keep those lenses clean, people! :) )
-
-* For GoPro (or other cameras with less barrel distortion):
-
-```ffmpeg -i <inputfile> -vf frei0r=defish0r:0.75:y:0.6:0 -vcodec libx264 -pix_fmt yuv420p -acodec copy <outputfile.mp4>```
 
 
 
