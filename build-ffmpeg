@@ -382,6 +382,8 @@ if build "frei0r"; then
 	perl -p -i -e "s/OpenCV\" OFF/OpenCV\" ON/" CMakeLists.txt
 	# remove Cairo dependency in case of conflict with system/brew
 	perl -p -i -e "s/find_package \(Cairo\)//" CMakeLists.txt
+	perl -p -i -e "s/ -arch i386//" CMakeLists.txt
+
 	execute cmake -DCMAKE_INSTALL_PREFIX:PATH=${WORKSPACE} .
 	execute make -s install
 	for file in ${WORKSPACE}/lib/frei0r-1/*.so ; do
